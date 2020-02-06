@@ -1,16 +1,12 @@
 // Use go run -race racecondition.go to see if race condition exist
-//  you will see at Bottom "Found 2 data race(s)
-// which are x and y
-
 package main
-
 import (
 	"fmt"
-	"runtime"
 	"sync"
 )
 var wg sync.WaitGroup
-var x,y int
+var mu sync.Mutex
+var x int
 func main()  {
 
 	wg.Add(2)
@@ -20,22 +16,22 @@ func main()  {
 }
 
 func increment1()  {
-	runtime.Gosched()
-	for i := 0; i <5 ; i++{
 
-		x = x+i
-		y = y+i
+	for i := 0; i <100 ; i++{
+		mu.Lock()
+		x++
 		fmt.Println("Increment1 : ", x)
-
+		mu.Unlock()
 	}
     wg.Done()
 }
 
 func increment2()  {
-	for i := 0; i <5 ; i++{
-		x = x+i
-		y = y+i
+	for i := 0; i <100 ; i++{
+		mu.Lock()
+		x++
 		fmt.Println("Increment2 : ", x)
+		mu.Unlock()
 	}
 	wg.Done()
 }
