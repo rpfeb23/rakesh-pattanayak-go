@@ -33,6 +33,7 @@ type human interface {
 }
 
 func bar(h human)  {
+	fmt.Println(h)
 	switch  h.(type){
 	case person:
 		fmt.Println("Type Person is passed as Interface")

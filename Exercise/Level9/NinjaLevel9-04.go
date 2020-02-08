@@ -16,7 +16,6 @@ func main()  {
 		go func() {
 			mu.Lock()
 			tempvalue := counter
-			runtime.Gosched()
 			tempvalue++
 			counter = tempvalue
 			mu.Unlock()
