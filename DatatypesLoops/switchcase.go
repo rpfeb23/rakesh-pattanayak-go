@@ -77,8 +77,8 @@ func main() {
 
 	fmt.Println("*************** SWITCH WITH EXPRESSION **************")
 
-	var  day_of_week string = "friday"
-	switch day_of_week {
+	var  dayOfWeek string = "friday"
+	switch dayOfWeek {
 	case "Monday":
 		fmt.Println("Today is Monday")
 	case "Tuesday":

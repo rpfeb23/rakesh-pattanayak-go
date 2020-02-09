@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 func main()  {
-    main_even_sum := evensum(sum,1,2,3,4,5,6,7,8)
-    fmt.Println(main_even_sum)
-    main_odd_sum := oddsum(sum, 1,2,3,4,5,6,7,8)
-    fmt.Println(main_odd_sum)
+    mainEvenSum := evensum(sum,1,2,3,4,5,6,7,8)
+    fmt.Println(mainEvenSum)
+    mainOddSum := oddsum(sum, 1,2,3,4,5,6,7,8)
+    fmt.Println(mainOddSum)
 }
 
 func sum(x ...int) int{

@@ -8,16 +8,16 @@ func main()  {
 }
 
 func factorial(i int) int {
-	var factorial_output int = 1
+	var factorialOutput int = 1
 	if (i == 0) {
-		factorial_output = 1
+		factorialOutput = 1
 	} else if (i > 0){
-		factorial_output = i * factorial(i-1)
+		factorialOutput = i * factorial(i-1)
 	}else{
 		fmt.Println("Factorial of negetive number can not be calculated")
 		return 0
 	}
-	return factorial_output
+	return factorialOutput
 }
 
 func factusingloop(i int) int {
